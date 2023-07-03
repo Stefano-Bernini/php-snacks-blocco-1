@@ -52,6 +52,48 @@
             $approved = true;
         }
     }
+
+
+    // SNACK 3
+    $posts = [
+
+        '10/01/2019' => [
+            [
+                'title' => 'Post 1',
+                'author' => 'Michele Papagni',
+                'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fringilla lobortis tellus vitae luctus. Maecenas nec malesuada nunc. Fusce consectetur, sapien et fringilla mattis, lorem arcu viverra nibh, sit amet consequat massa arcu vel sapien.'
+            ],
+            [
+                'title' => 'Post 2',
+                'author' => 'Michele Papagni',
+                'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fringilla lobortis tellus vitae luctus. Maecenas nec malesuada nunc. Fusce consectetur, sapien et fringilla mattis, lorem arcu viverra nibh, sit amet consequat massa arcu vel sapien.'
+            ],
+        ],
+        '10/02/2019' => [
+            [
+                'title' => 'Post 3',
+                'author' => 'Michele Papagni',
+                'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fringilla lobortis tellus vitae luctus. Maecenas nec malesuada nunc. Fusce consectetur, sapien et fringilla mattis, lorem arcu viverra nibh, sit amet consequat massa arcu vel sapien.'
+            ]
+        ],
+        '15/05/2019' => [
+            [
+                'title' => 'Post 4',
+                'author' => 'Michele Papagni',
+                'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fringilla lobortis tellus vitae luctus. Maecenas nec malesuada nunc. Fusce consectetur, sapien et fringilla mattis, lorem arcu viverra nibh, sit amet consequat massa arcu vel sapien.'
+            ],
+            [
+                'title' => 'Post 5',
+                'author' => 'Michele Papagni',
+                'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fringilla lobortis tellus vitae luctus. Maecenas nec malesuada nunc. Fusce consectetur, sapien et fringilla mattis, lorem arcu viverra nibh, sit amet consequat massa arcu vel sapien.'
+            ],
+            [
+                'title' => 'Post 6',
+                'author' => 'Michele Papagni',
+                'text' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc fringilla lobortis tellus vitae luctus. Maecenas nec malesuada nunc. Fusce consectetur, sapien et fringilla mattis, lorem arcu viverra nibh, sit amet consequat massa arcu vel sapien.'
+            ]
+        ],
+    ];
 ?>
 
 <!DOCTYPE html>
@@ -99,6 +141,19 @@
                         }
                     ?>
                 </h1>
+            </div>
+            <hr>
+            <!-- SNACK 3 -->
+            <div class="col">
+                <h1>Snack 3</h1>
+                <?php foreach($posts as $date => $post){?>
+                    <h4><?php echo $date ?></h4>
+                    <?php foreach($post as $messages){ ?>
+                        <p><?php echo $messages['title'] ?></p>
+                        <p><?php echo $messages['author'] ?></p>
+                        <p><?php echo $messages['text'] ?></p>
+                    <?php } ?>
+                <?php } ?>
             </div>
         </div>
     </div>
