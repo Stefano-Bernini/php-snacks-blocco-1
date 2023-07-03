@@ -53,7 +53,6 @@
         }
     }
 
-
     // SNACK 3
     $posts = [
 
@@ -94,6 +93,16 @@
             ]
         ],
     ];
+    // SNACK 4
+    $numbers = [];
+
+    while (count($numbers) < 16) {
+        $random_numbers = rand(1,100);
+
+        if (!in_array($random_numbers, $numbers)){
+            $numbers[] = $random_numbers;
+        }
+    }
 ?>
 
 <!DOCTYPE html>
@@ -108,7 +117,7 @@
     <div class="container py-5">
         <div class="row">
             <!-- SNACK 1 -->
-            <div class="col">
+            <div class="col-12">
                 <h1>Snack 1</h1>
                 <p class="py-1">
                     <?php foreach ($matches as $match) {
@@ -119,7 +128,7 @@
             </div>
             <hr>
             <!-- SNACK 2 -->
-            <div class="col">
+            <div class="col-12">
                 <h1>Snack 2</h1>
                 <form action="" method="GET">
                     <label for="name">Nome:</label> <br>
@@ -144,7 +153,7 @@
             </div>
             <hr>
             <!-- SNACK 3 -->
-            <div class="col">
+            <div class="col-12">
                 <h1>Snack 3</h1>
                 <?php foreach($posts as $date => $post){?>
                     <h4><?php echo $date ?></h4>
@@ -153,6 +162,14 @@
                         <p><?php echo $messages['author'] ?></p>
                         <p><?php echo $messages['text'] ?></p>
                     <?php } ?>
+                <?php } ?>
+            </div>
+            <hr>
+            <!-- SNACK 4 -->
+            <div class="col-12">
+                <h1>Snack 4</h1>
+                <?php foreach($numbers as $number) {?>
+                    <p><?php echo $number ?></p>
                 <?php } ?>
             </div>
         </div>
