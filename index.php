@@ -1,4 +1,5 @@
 <?php 
+    // SNACK 1
     $matches = [
         [
             'teams' => 'Olimpia Milano - Virtus Bologna',
@@ -32,9 +33,26 @@
             'teams' => 'Trieste - Verona',
             'point' => '79-76'
         ],
-   ]
-?>
+    ];
+    
 
+    // SNACK 2
+    $snack2_login = false;
+    
+   if (isset($_GET['name']) && isset($_GET['mail']) && isset($_GET['age'])){
+        $snack2_login = true;
+        
+        $name = $_GET['name'];
+        $mail = $_GET['mail'];
+        $age = $_GET['age'];
+
+        
+        $approved = false;
+        if(strlen($name) > 3 && strpos($mail, '.') !== false && strpos($mail, '@') !== false && is_numeric($age)){
+            $approved = true;
+        }
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,13 +65,40 @@
 <body>
     <div class="container py-5">
         <div class="row">
+            <!-- SNACK 1 -->
             <div class="col">
                 <h1>Snack 1</h1>
-                <p class="py-1"><?php foreach ($matches as $match) {
-                    echo $match['teams']." | ".$match['point'].'<br>';
+                <p class="py-1">
+                    <?php foreach ($matches as $match) {
+                        echo $match['teams']." | ".$match['point'].'<br>';
                     }
                     ?>
                 </p>
+            </div>
+            <hr>
+            <!-- SNACK 2 -->
+            <div class="col">
+                <h1>Snack 2</h1>
+                <form action="" method="GET">
+                    <label for="name">Nome:</label> <br>
+                    <input type="text" id="name" name="name" required>
+
+                    <div class="py-4">
+                        <label for="mail">E-mail:</label> <br>
+                        <input type="email" id="mail" name="mail" required>
+                    </div>
+
+                    <label for="age">Eta':</label> <br>
+                    <input type="text" id="age" name="age" required> <br>
+                    <button class="my-2" type="submit" value="send_data">Invia</button>
+                </form>
+                <h1>
+                    <?php 
+                        if($snack2_login) {
+                            echo $approved ?  "Accesso Riuscito":"Accesso Negato";
+                        }
+                    ?>
+                </h1>
             </div>
         </div>
     </div>
